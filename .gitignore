@@ -1,0 +1,12 @@
+# build output
+/demo
+*.o
+*.obj
+*.exe
+*.out
+
+# editor / os
+.vscode/
+.idea/
+*~
+.DS_Store

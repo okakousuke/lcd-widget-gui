@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show compiler
+        run: cc --version
+
+      - name: Build (warnings as check)
+        run: cc -std=c11 -Wall -Wextra -Wpedantic -o demo gui.c demo.c
+
+      - name: Run demo (all scenarios must pass, exit 0)
+        run: ./demo
+
+      - name: Verify no malloc-family symbols are pulled in
+        run: |
+          if nm -u demo | grep -E '\b(malloc|calloc|realloc|free)\b'; then
+            echo "malloc-family symbol found"; exit 1
+          else
+            echo "OK: no malloc-family undefined symbols"
+          fi
