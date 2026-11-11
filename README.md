@@ -1,6 +1,6 @@
 # lcd-widget-gui
 
-[![PayPalで開発を支援する](https://img.shields.io/badge/PayPal-Donate-0070BA?logo=paypal&logoColor=white&style=for-the-badge)](https://paypal.me/okako1124)
+[![PayPalで開発を支援する](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/okako1124)
 
 小型な **4行キャラクタLCD** 向けの、最小構成 GUI ライブラリのサンプル実装です。
 C言語で「Widget ＋ クラス関数表（vtable風）」の継承を、**`malloc` なし・静的確保だけ**で組み立てます。
